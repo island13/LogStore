@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import OSLog
 
 @main
 struct LogStoreApp: App {
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 ContentView()
             }
+            .onAppear {
+                os_log(.info, log: OSLog(subsystem: "Watch", category: "Log"), "🙂")
+            }
         }
+        
     }
 }
